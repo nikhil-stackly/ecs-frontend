@@ -1,10 +1,12 @@
 pipeline {
   agent any
+
   stages {
-    stage('Test') {
+    stage('Checkout') {
       steps {
-        echo "Jenkins connected to GitHub successfully 🚀"
+        git 'https://github.com/nikhil-stackly/ecs-frontend.git'
       }
     }
   }
 }
+
