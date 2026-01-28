@@ -2,11 +2,18 @@ pipeline {
   agent any
 
   stages {
-    stage('Verify Checkout') {
+
+    stage('Build Docker Images') {
       steps {
-        sh 'ls -l'
+        sh '''
+          echo "Building backend image"
+          docker build -t backend backend/
+
+          echo "Building frontend image"
+          docker build -t frontend frontend/
+        '''
       }
     }
+
   }
 }
-
