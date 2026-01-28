@@ -2,9 +2,9 @@ pipeline {
   agent any
 
   stages {
-    stage('Checkout') {
+    stage('Verify Checkout') {
       steps {
-        git 'https://github.com/nikhil-stackly/ecs-frontend.git'
+        sh 'ls -l'
       }
     }
   }
